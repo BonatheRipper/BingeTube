@@ -1,8 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
-import { Navbar, SearchBar } from "./components";
-import { ChannelPage, Home, VideoPage, SearchItem } from "./components/pages";
+import { Navbar, RightSideBar, SearchBar } from "./components";
+import {
+  ChannelPage,
+  Home,
+  VideoPage,
+  SearchItem,
+  NotFound,
+} from "./components/pages";
 import "./index.css";
 
 const App = () => {
@@ -18,11 +24,12 @@ const App = () => {
         }}
       >
         <Navbar />
+        <RightSideBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/video/:videoId" element={<VideoPage />} />
-          <Route path="/channel/:channelId" element={<ChannelPage />} />
           <Route path="/search/:searchString" element={<SearchItem />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Box>
     </BrowserRouter>

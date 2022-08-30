@@ -5,4 +5,6 @@ export { default as SideBarButton } from "./SideBarButton";
 export { default as VideosParent } from "./VideosParent";
 export { default as VideoCard } from "./VideoCard";
 export { default as ChannelCard } from "./ChannelCard";
+export { default as RightSideBar } from "./RightSideBar";
+
 export { default as VideoLoadingSpinners } from "./VideoLoadingSpinners";
