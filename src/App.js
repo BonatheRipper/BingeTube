@@ -21,6 +21,7 @@ const App = () => {
           backgroundColor: "#000",
           padding: "0",
           margin: "0",
+          display: "relative",
         }}
       >
         <Navbar />
