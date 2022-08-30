@@ -10,7 +10,7 @@ const sortByNum = ["5", "10", "20", "40", "50", "80", "100"];
 const Home = () => {
   const [selectedCat, setSelectedCat] = useState("Movies");
   const [FilterNum, setFilterNum] = useState("50");
-  const [FilterNumActive, setFilterNumActive] = useState(false);
+  const [FilterNumActive, setFilterNumActive] = useState(true);
 
   const [videos, setVideos] = useState([]);
   useEffect(() => {
@@ -38,7 +38,7 @@ const Home = () => {
               Copyright BingeTube 2022
             </Typography>
           </Box>
-          <Box>
+          <Box className="relative">
             <div className="flex flex-col p-0 m-0">
               <div className="flex items-center justify-between px-4">
                 {" "}
