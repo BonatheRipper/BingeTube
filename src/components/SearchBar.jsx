@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Paper, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { BingeTubeProvider } from "./../context/contextProvider";
 
 const SearchBar = () => {
   const [searchTerm, setSearchedTerm] = useState("");
+  const { themeBG } = BingeTubeProvider();
+
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +31,7 @@ const SearchBar = () => {
         placeholder="search"
         value={searchTerm}
       />
-      <IconButton type="submit" className="p-4 !text-c-yellow">
+      <IconButton type="submit" className={`p-4 !text-${themeBG}`}>
         <SearchIcon />
       </IconButton>
     </Paper>

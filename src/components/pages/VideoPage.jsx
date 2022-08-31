@@ -9,7 +9,9 @@ import VideosParent from "../VideosParent";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import RecommendIcon from "@mui/icons-material/Recommend";
 import VideoLoadingSpinners from "../VideoLoadingSpinners";
+import { BingeTubeProvider } from "../../context/contextProvider";
 const VideoPage = () => {
+  const { themeBG } = BingeTubeProvider();
   const [videoDetail, setVideoDetails] = useState(false);
   const [videos, setVideos] = useState([]);
   const { videoId } = useParams();
@@ -33,7 +35,7 @@ const VideoPage = () => {
           {videoDetail ? (
             <Box flex={1}>
               <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
-                <div className="border-b rounded-sm  border-c-yellow">
+                <div className={`border-b rounded-sm  border-${themeBG}`}>
                   <ReactPlayer
                     url={`https://www.youtube.com/watch?v=${videoId}`}
                     controls
@@ -66,7 +68,7 @@ const VideoPage = () => {
                     <span>
                       <Typography
                         variant="body1"
-                        className="text-c-yellow flex justify-between items-center opacity-80 hover:opacity-100"
+                        className={`text-${themeBG} flex justify-between items-center opacity-60 hover:opacity-90`}
                       >
                         <span>
                           {videoDetail
@@ -85,7 +87,7 @@ const VideoPage = () => {
                     <span>
                       <Typography
                         variant="body1"
-                        className="text-c-yellow flex justify-between items-center"
+                        className={`text-${themeBG} flex justify-between items-center opacity-60 hover:opacity-90`}
                       >
                         <span>
                           {videoDetail

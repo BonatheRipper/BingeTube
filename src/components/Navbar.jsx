@@ -4,19 +4,11 @@ import { YellowLogo, RedLogo } from "../utils/global";
 // import { RedLogo } from "../utils/global";
 import { Link, NavLink } from "react-router-dom";
 import SearchBar from "./SearchBar";
-import { useState } from "react";
-import LiveTvIcon from "@mui/icons-material/LiveTv";
-const siteTheme = [
-  { BG: "c-yellow", Logo: YellowLogo },
-  { BG: "c-green", Logo: YellowLogo },
-  { BG: "c-red", Logo: RedLogo },
-  { BG: "c-blue", Logo: YellowLogo },
-  { BG: "c-LightDark", Logo: YellowLogo },
-];
-const Navbar = () => {
-  const [themeBG, setThemeBg] = useState(siteTheme[0].BG);
-  const [themeLogo, setThemeLogo] = useState(siteTheme[0].Logo);
 
+import { BingeTubeProvider } from "./../context/contextProvider";
+
+const Navbar = () => {
+  const { themeBG } = BingeTubeProvider();
   return (
     <Stack
       direction="row"
@@ -35,8 +27,7 @@ const Navbar = () => {
         className="flex flex-row  justify-center items-center px-2 py-2 text-white font-bold md:text-xl text-lg my-2 mx-2 "
       >
         <span>Binge </span>
-        <span className="text-c-yellow">Tube</span>
-        {/* <img src={themeLogo} alt="Logo" className="h-16 md:h-20 " /> */}
+        <span className={`text-${themeBG}`}>Tube</span>
       </Link>
       <SearchBar />
     </Stack>

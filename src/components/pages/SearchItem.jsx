@@ -5,7 +5,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import VideosParent from "../VideosParent";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import VideoLoadingSpinners from "../VideoLoadingSpinners";
+import { BingeTubeProvider } from "../../context/contextProvider";
 const SearchItem = () => {
+  const { themeBG } = BingeTubeProvider();
   const [videos, setVideos] = useState([]);
   const { searchString } = useParams();
   useEffect(() => {
@@ -33,12 +35,12 @@ const SearchItem = () => {
                   Results for
                   {searchString.charAt(0).toUpperCase() + searchString.slice(1)}
                 </span>
-                <span className="text-c-yellow"> Videos</span>
+                <span className={`text-${themeBG}`}> Videos</span>
               </div>
 
               <span
                 onClick={() => backToHome()}
-                className="!text-xl text-black md:mx-10 mr-4 bg-c-yellow px-4 md:px-8"
+                className={`!text-xl text-black opacity-60 hover:opacity-90 md:mx-10 mr-4 bg-${themeBG} px-4 md:px-`}
               >
                 <KeyboardBackspaceIcon />
               </span>
