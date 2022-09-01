@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { ScrollRotate } from "react-scroll-rotate";
@@ -7,21 +7,29 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 const RightSideBar = () => {
   const [rightbarActive, setRightBarActive] = useState(true);
   const { themeBG, siteTheme, setThemeBg } = BingeTubeProvider();
-  var x = 0;
-  const SetTime = setInterval(() => {
-    x++;
-    if (x === 5) {
-      setRightBarActive(false);
-      clearInterval(SetTime);
+
+  useEffect(() => {
+    function ShowRightBarOnce() {
+      var x = 0;
+      const SetTime = setInterval(() => {
+        x++;
+        if (x === 5) {
+          setRightBarActive(false);
+          clearInterval(SetTime);
+        }
+      }, 1000);
     }
-  }, 1000);
+    ShowRightBarOnce();
+  }, []);
 
   return (
     <>
       <>
-        {rightbarActive && (
+        {
           <div
-            className={` right-0 transition duration-500 fixed bg-black h-screen flex flex-col opacity-80 hover:opacity-90 justify-start w-8/12 md:w-3/12 shadow-md shadow-${themeBG} z-50 `}
+            className={`${
+              rightbarActive ? "right-0" : "-right-full "
+            }  fixed  bg-black h-screen flex flex-col opacity-80 hover:opacity-90 justify-start w-8/12 md:w-3/12 shadow-md shadow-${themeBG} z-50 `}
           >
             <div
               className="flex flex- row  justify-center py-8"
@@ -36,14 +44,16 @@ const RightSideBar = () => {
             >
               Colors
             </h1>
-            <h1 className="text-white px-4 w-full border-b opacity-20 py-1"></h1>
-            <div className=" grid grid-cols-3 gap-2 md:px-10 my-4">
+            <h1 className="text-white px-4 w-full border-b opacity-20 py-1">
+              {" "}
+            </h1>
+            <div className=" grid grid-cols-3 gap-2 md:px-10 my-4 px-3">
               {siteTheme.map((item) => {
                 return (
                   <span
                     onClick={() => setThemeBg(item.BG)}
                     key={item}
-                    className={`w-16 h-16 rounded-lg mx-1  md:mx-6   bg-${item.BG} flex justify-center items-center`}
+                    className={`w-16 h-16 rounded-lg mx-1  md:mx-6  border  bg-${item.BG}  flex justify-center items-center`}
                   >
                     {item.BG === themeBG && <CheckCircleOutlineIcon />}
                   </span>
@@ -59,7 +69,7 @@ const RightSideBar = () => {
               </button>
             </div>
           </div>
-        )}
+        }
       </>
 
       <>

@@ -17,7 +17,7 @@ function Options(query, num) {
       maxResults: num,
     },
     headers: {
-      "X-RapidAPI-Key": RapidApiKeys(),
+      "X-RapidAPI-Key": "4ec374b9aamsh8b8425033091a15p1d2e6cjsna1f32c9cfc4e",
       "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
     },
   };
