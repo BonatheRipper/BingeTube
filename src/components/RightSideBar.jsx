@@ -21,7 +21,7 @@ const RightSideBar = () => {
     }
     ShowRightBarOnce();
   }, []);
-
+  console.log(themeBG);
   return (
     <>
       <>
@@ -52,7 +52,7 @@ const RightSideBar = () => {
                 return (
                   <span
                     onClick={() => setThemeBg(item.BG)}
-                    key={item}
+                    key={item + Math.floor(Math.random() * 34843992848)}
                     className={`w-16 h-16 rounded-lg mx-1  md:mx-6  border  bg-${item.BG}  flex justify-center items-center`}
                   >
                     {item.BG === themeBG && <CheckCircleOutlineIcon />}

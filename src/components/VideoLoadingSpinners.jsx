@@ -7,7 +7,7 @@ const VideoLoadingSpinners = () => {
   return (
     <div className="h-screen bg-black  z-50 relative w-full flex justify-center items-center">
       <span
-        className={`!text-${themeBG} !bg-${themeBG} rounded-full opacity-80 hover:opacity-90`}
+        className={`text-${themeBG} bg-${themeBG} rounded-full opacity-80 hover:opacity-90`}
       >
         <BounceLoader className="" />
       </span>

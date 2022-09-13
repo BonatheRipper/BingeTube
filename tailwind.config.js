@@ -16,6 +16,15 @@ module.exports = {
       },
       backgroundColor: {
         "cb-gold": "#D2B6A2",
+        "c-yellow": "#FFD232",
+        "c-green": "#01E801",
+        "c-red": "#FF1414",
+        "c-blue": "#38B6FF",
+        "c-LightDark": "#750DEA",
+        "c-xx": "#EA0D82",
+        "c-xxx": "#0D73EA",
+        "c-xxxx": "#4D0DEA",
+        "c-xxxxx": "#A6A6A6",
       },
       fontFamily: {
         fair: ["Playfair Display", "serif"],

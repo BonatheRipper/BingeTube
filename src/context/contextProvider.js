@@ -19,7 +19,7 @@ export const ContextParentProvider = ({ children }) => {
   const [themeLogo, setThemeLogo] = useState(siteTheme[0].Logo);
 
   return (
-    <StateContext.Provider value={{ themeBG, siteTheme }}>
+    <StateContext.Provider value={{ themeBG, siteTheme, setThemeBg }}>
       {children}
     </StateContext.Provider>
   );
