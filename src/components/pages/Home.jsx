@@ -22,7 +22,6 @@ const Home = () => {
       FilterNum
     ).then((data) => setVideos(data.items));
   }, [selectedCat, FilterNum]);
-  console.log(videos);
   return (
     <div className="flex md:flex-row flex-col w-full relative h-full">
       {videos.length ? (

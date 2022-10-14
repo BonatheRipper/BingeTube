@@ -24,7 +24,6 @@ const VideoPage = () => {
       `search?part=snippet&relatedToVideoId=${videoId}&type=video`
     ).then((data) => setVideos(data.items));
   }, [videoId]);
-  console.log(videoDetail);
   return (
     <div className="h-full w-full relative">
       <Box>

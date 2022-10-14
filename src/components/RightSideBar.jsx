@@ -21,7 +21,6 @@ const RightSideBar = () => {
     }
     ShowRightBarOnce();
   }, []);
-  console.log(themeBG);
   return (
     <>
       <>
