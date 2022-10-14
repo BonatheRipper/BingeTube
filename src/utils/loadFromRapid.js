@@ -2,11 +2,12 @@ import axios from "axios";
 const BASE_URL = "https://youtube-v31.p.rapidapi.com";
 const RapidApiKeys = () => {
   let RapidApiKeysArr = [
-    "39cae78236msha03f76a76364131p1788cejsn02628243432e",
-    "4ec374b9aamsh8b8425033091a15p1d2e6cjsna1f32c9cfc4e",
+    process.env.REACT_APP_BINGE_RAPID_API_KEY_ONE,
+    process.env.REACT_APP_BINGE_RAPID_API_KEY_TWO,
   ];
   return RapidApiKeysArr[Math.floor(Math.random() * RapidApiKeysArr.length)];
 };
+console.log(RapidApiKeys());
 function Options(query, num) {
   return {
     params: {
